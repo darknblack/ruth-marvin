@@ -18,13 +18,20 @@ A beautiful, modern wedding invitation website built with React and Tailwind CSS
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- npm or yarn
+- pnpm (recommended) or npm
 
 ### Installation
 
-1. Clone or download this repository
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/darknblack/ruth-marvin.git
+   cd ruth-marvin
+   ```
+
 2. Install dependencies:
    ```bash
+   pnpm install
+   # or
    npm install
    ```
 
@@ -37,11 +44,15 @@ A beautiful, modern wedding invitation website built with React and Tailwind CSS
 
 4. Start the development server:
    ```bash
+   pnpm dev
+   # or
    npm run dev
    ```
 
 5. Build for production:
    ```bash
+   pnpm build
+   # or
    npm run build
    ```
 
@@ -84,11 +95,27 @@ The RSVP form currently logs to console. For production, you'll want to:
 
 ### Deploy to Vercel (Recommended)
 
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Vercel will automatically detect Vite and configure everything
-5. Your site will be live in minutes!
+**GitHub Repository**: https://github.com/darknblack/ruth-marvin
+
+**Production URL**: https://wedding-beta-three.vercel.app
+
+#### Option 1: Deploy via CLI
+```bash
+# Deploy to production
+pnpm deploy
+
+# Deploy to preview
+pnpm deploy:preview
+```
+
+#### Option 2: Automatic Deployment via GitHub
+1. Connect your GitHub repository to Vercel:
+   - Go to [Vercel Dashboard](https://vercel.com/darknblacks-projects/wedding/settings/git)
+   - Click "Connect Git Repository"
+   - Select GitHub and authorize Vercel
+   - Choose `darknblack/ruth-marvin`
+2. Every push to the `main` branch will automatically deploy to production
+3. Pull requests will create preview deployments automatically
 
 ### Deploy to Netlify
 
