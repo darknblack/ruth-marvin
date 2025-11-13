@@ -80,13 +80,21 @@ function OurStory() {
   ]
 
   return (
-    <section className="khaki-light relative overflow-hidden z-10 pt-4">
+    <section className="khaki-bg relative overflow-hidden z-10 pt-4">
+      {/* Repeating pattern overlay */}
+      <div
+        className="absolute inset-0 z-[5] pointer-events-none opacity-[0.02]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      ></div>
+
       {/* Decorative background blob elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-80 h-80 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-32 left-10 w-96 h-96 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000"></div>
-        <div className="absolute top-10 right-1/4 w-56 h-56 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-3000 hidden lg:block"></div>
+        <div className="absolute top-20 right-10 w-80 h-80 bg-blush-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-32 left-10 w-96 h-96 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000"></div>
+        <div className="absolute top-10 right-1/4 w-56 h-56 bg-blush-50 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-3000 hidden lg:block"></div>
       </div>
 
       {/* Elegant Header Section */}
@@ -120,46 +128,51 @@ function OurStory() {
       </div>
 
       {/* Timeline Content Section */}
-      <div className="section-padding pt-0">
-        <div className="max-w-6xl mx-auto">
+      <div className="section-padding pt-12 pb-16">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold-300 via-gold-400 to-gold-300 hidden md:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-gold-300 via-gold-400 to-gold-300 hidden md:block opacity-40"></div>
 
-            <div className="space-y-12 md:space-y-16">
+            <div className="space-y-16 md:space-y-24">
               {storyTimeline.map((event, index) => (
                 <div
                   key={index}
                   ref={el => timelineItemsRef.current[index] = el}
-                  className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                    } flex-col gap-8`}
+                  className={`flex items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    } flex-col gap-6 md:gap-8`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Content */}
                   <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
-                    <div className="bg-khaki-50 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl smooth-transition border border-khaki-200 romantic-hover group">
+                    <div className="group smooth-transition">
+                      {/* Year and Title Header */}
+                      <div className={`mb-4 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
+                        <div className="flex items-center justify-center gap-3 mb-3">
+                          <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+                          <div className="text-khaki-600 font-bold text-base md:text-lg tracking-wider">{event.year}</div>
+                          <div className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent via-gold-400 to-transparent"></div>
+                        </div>
+                        <h3 className="font-elegant text-2xl sm:text-3xl md:text-4xl font-semibold text-khaki-900 mb-4 group-hover:text-gradient smooth-transition">
+                          {event.title}
+                        </h3>
+                      </div>
+
                       {/* Image */}
-                      <div className="w-full h-56 md:h-72 overflow-hidden relative">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent z-10 smooth-transition group-hover:from-black/5"></div>
+                      <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden relative rounded-lg mb-6 group-hover:shadow-xl smooth-transition">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10 smooth-transition"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-gold-400/0 via-transparent to-blush-400/0 z-10 smooth-transition group-hover:from-gold-400/5 group-hover:to-blush-400/5"></div>
                         <img
                           src={event.image}
                           alt={event.title}
-                          className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
+                          className="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700"
                         />
-                        {/* Floating hearts on hover */}
-                        <span className="absolute top-4 right-4 text-xl opacity-0 group-hover:opacity-60 animate-float smooth-transition" style={{ animationDelay: '0.5s' }}>💖</span>
                       </div>
-                      {/* Text Content */}
-                      <div className="p-6 md:p-8">
-                        <div className="text-khaki-600 font-bold text-lg mb-3 tracking-wider animate-gentle-pulse">{event.year}</div>
-                        <h3 className="font-elegant text-2xl md:text-3xl font-semibold text-khaki-900 mb-4 group-hover:text-gradient smooth-transition">
-                          {event.title}
-                        </h3>
-                        <p className="text-khaki-700 leading-relaxed text-base md:text-lg">
-                          {event.description}
-                        </p>
-                      </div>
+
+                      {/* Description */}
+                      <p className="text-khaki-700 leading-relaxed text-sm sm:text-base md:text-lg">
+                        {event.description}
+                      </p>
                     </div>
                   </div>
 
@@ -167,14 +180,14 @@ function OurStory() {
                   <div className="relative z-10 flex-shrink-0">
                     <div className="relative group/icon">
                       {/* Glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-full blur-lg opacity-40 group-hover/icon:opacity-60 animate-gentle-pulse smooth-transition"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-gold-200 via-gold-500 to-gold-200 rounded-full blur-lg opacity-30 group-hover/icon:opacity-50 animate-gentle-pulse smooth-transition"></div>
                       {/* Icon container */}
-                      <div className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-full flex items-center justify-center text-4xl md:text-5xl shadow-xl border-4 border-white transform group-hover/icon:scale-125 group-hover/icon:rotate-12 smooth-transition animate-float">
-                        <span className="relative z-10">{event.icon}</span>
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-gold-500 via-gold-400 to-gold-500 rounded-full flex items-center justify-center text-3xl sm:text-4xl md:text-5xl shadow-lg border-2 md:border-4 border-khaki-100 transform group-hover/icon:scale-110 group-hover/icon:rotate-6 smooth-transition animate-float">
+                        <span className="relative z-10 opacity-70">{event.icon}</span>
                       </div>
                       {/* Floating sparkles around icon */}
-                      <span className="absolute -top-2 -right-2 text-sm opacity-0 group-hover/icon:opacity-70 animate-sparkle smooth-transition">✨</span>
-                      <span className="absolute -bottom-1 -left-1 text-xs opacity-0 group-hover/icon:opacity-70 animate-sparkle smooth-transition" style={{ animationDelay: '0.3s' }}>💫</span>
+                      <span className="absolute -top-1 -right-1 text-xs sm:text-sm opacity-0 group-hover/icon:opacity-60 animate-sparkle smooth-transition">✨</span>
+                      <span className="absolute -bottom-1 -left-1 text-xs opacity-0 group-hover/icon:opacity-60 animate-sparkle smooth-transition" style={{ animationDelay: '0.3s' }}>💫</span>
                     </div>
                   </div>
 

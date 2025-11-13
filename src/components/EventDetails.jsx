@@ -69,10 +69,10 @@ function EventDetails() {
   return (
     <section className="section-padding khaki-bg relative z-10 overflow-hidden">
       {/* Decorative background blob elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -left-32 md:-left-40 w-72 h-72 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/2 -left-24 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000 hidden lg:block"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-non hidden sm:block">
+        <div className="absolute top-20 -left-32 md:-left-40 w-72 h-72 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-blush-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 -left-24 w-64 h-64 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000 hidden lg:block"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -93,7 +93,7 @@ function EventDetails() {
         {/* Event details and map side by side */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event Information */}
-          <div ref={eventInfoRef} className="bg-khaki-50 rounded-lg shadow-lg p-8 hover:shadow-2xl smooth-transition border border-khaki-200 romantic-hover group">
+          <div ref={eventInfoRef} className="p-8 smooth-transition romantic-hover group">
             <div className="text-center mb-6">
               <h3 className="font-elegant text-3xl md:text-4xl font-bold text-khaki-900 mb-2">
                 Ceremony & Reception
@@ -122,7 +122,7 @@ function EventDetails() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-elegant text-xl font-semibold text-khaki-900 group-hover/event:text-gradient smooth-transition">{event.title}</h4>
-                      <p className="text-xl font-bold text-gradient animate-gentle-pulse">{event.time}</p>
+                      <p className="text-xl font-bold text-gradient">{event.time}</p>
                     </div>
                     <p className="text-sm text-khaki-700 italic">{event.description}</p>
                     {/* Floating sparkle on hover */}

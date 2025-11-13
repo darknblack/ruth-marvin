@@ -147,8 +147,8 @@ function RSVP({ code: propCode }) {
     <section className="section-padding relative overflow-hidden z-10 bg-gradient-to-br from-khaki-100 via-blush-50 to-khaki-100">
       {/* Background with subtle gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-khaki-50 via-blush-50 to-gold-50">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">

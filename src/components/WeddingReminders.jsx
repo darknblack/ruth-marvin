@@ -60,33 +60,82 @@ function WeddingReminders() {
   ]
 
   return (
-    <section className="section-padding khaki-light relative z-10">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding khaki-light relative z-10 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
+        <div className="absolute top-10 -right-32 w-64 h-64 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-10 -left-32 w-72 h-72 bg-blush-50 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16" ref={headerRef}>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
+            <span className="text-2xl md:text-3xl text-blush-400 animate-float animate-heartbeat">💝</span>
+            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
+          </div>
           <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-800 mb-4">
             Wedding Reminders
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12 md:gap-16">
           {reminders.map((reminder, index) => (
             <div
               key={index}
               ref={el => reminderCardsRef.current[index] = el}
-              className="bg-khaki-50 rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow duration-300 border border-khaki-200 smooth-transition romantic-hover"
+              className="relative text-center smooth-transition group"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="text-6xl mb-4">{reminder.icon}</div>
-              <h3 className="font-elegant text-2xl md:text-3xl font-bold text-khaki-900 mb-4">
-                {reminder.title}
-              </h3>
-              <p className="text-khaki-700 leading-relaxed">
-                {reminder.description}
-              </p>
+              {/* Decorative line */}
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="h-px w-8 bg-gradient-to-r from-transparent via-khaki-400 to-khaki-400"></div>
+                <div className="text-5xl md:text-6xl opacity-80 group-hover:scale-110 smooth-transition">{reminder.icon}</div>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent via-khaki-400 to-khaki-400"></div>
+              </div>
+
+              {/* Content */}
+              <div className="space-y-4">
+                <h3 className="font-elegant text-2xl md:text-3xl font-bold text-khaki-900 group-hover:text-gradient smooth-transition flex items-center justify-center gap-3">
+                  {/* Number badge */}
+
+                  <span>{index + 1}. {reminder.title}</span>
+                </h3>
+                <p className="text-khaki-700 leading-relaxed text-sm md:text-base max-w-xs mx-auto">
+                  {reminder.description}
+                </p>
+              </div>
+
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1) rotate(360deg);
+          }
+        }
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </section>
   )
 }
