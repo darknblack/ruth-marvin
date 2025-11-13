@@ -74,15 +74,15 @@ function CountdownTimer({ targetDate }) {
   return (
     <section className="section-padding relative overflow-hidden bg-gradient-to-br from-khaki-50 via-blush-50 to-gold-50 z-10">
       {/* Background with subtle gradient and animated elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-khaki-50 via-blush-50 to-gold-50">
-        <div className="absolute top-10 left-1/4 w-80 h-80 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animate-float"></div>
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-2000 animate-float-reverse"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-20 right-1/3 w-56 h-56 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000 hidden lg:block"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-khaki-50 via-khaki-50 to-khaki-50">
+        <div className="absolute top-10 left-1/4 w-80 h-80 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animate-float"></div>
+        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-2000 animate-float-reverse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-khaki-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 right-1/3 w-56 h-56 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000 hidden lg:block"></div>
         <div className="absolute bottom-32 left-1/3 w-64 h-64 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-3000 hidden lg:block"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto min-h-[90vh] py-4 flex flex-col justify-center">
+      <div className="relative z-10 max-w-6xl mx-auto min-h-[80vh] py-8 flex flex-col justify-center">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           {/* Decorative elements */}

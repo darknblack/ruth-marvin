@@ -46,12 +46,12 @@ function PersonalMessage() {
     }
   }, [])
   return (
-    <section className="section-padding relative z-10 min-h-[20vh] flex items-center justify-center overflow-hidden">
+    <section className="section-padding relative z-10 min-h-[20vh] flex items-center justify-center overflow-hidden w-full">
       {/* Decorative background blob elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-80 h-80 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000 hidden lg:block"></div>
+        <div className="absolute top-2 left-2 w-80 h-80 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-2 right-2 w-72 h-72 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-khaki-100 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000 hidden lg:block"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -128,14 +128,7 @@ function PersonalMessage() {
           border-radius: 0.375rem;
           pointer-events: none;
         }
-        .invitation-border::after {
-          content: '';
-          position: absolute;
-          inset: 12px;
-          border: 1px solid rgba(212, 203, 184, 0.3);
-          border-radius: 0.25rem;
-          pointer-events: none;
-        }
+        
       `}</style>
     </section>
   )

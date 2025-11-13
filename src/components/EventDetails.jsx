@@ -67,11 +67,14 @@ function EventDetails() {
   ]
 
   return (
-    <section className="section-padding khaki-bg relative z-10 overflow-hidden">
+    // <section className="section-padding khaki-bg relative z-10 overflow-hidden">
+
+    <section className="section-padding relative overflow-hidden bg-gradient-to-br from-khaki-100 via-khaki-50 to-khaki-100 z-10">
+
       {/* Decorative background blob elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-non hidden sm:block">
         <div className="absolute top-20 -left-32 md:-left-40 w-72 h-72 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-blush-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
         <div className="absolute top-1/2 -left-24 w-64 h-64 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000 hidden lg:block"></div>
       </div>
 
@@ -79,7 +82,7 @@ function EventDetails() {
         <div className="text-center mb-16" ref={headerRef}>
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
-            <span className="text-2xl md:text-3xl text-blush-400 animate-float animate-heartbeat">💒</span>
+            <span className="text-2xl md:text-3xl animate-float animate-heartbeat">💒</span>
             <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
           </div>
           <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-900 mb-4">
@@ -93,7 +96,7 @@ function EventDetails() {
         {/* Event details and map side by side */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event Information */}
-          <div ref={eventInfoRef} className="p-8 smooth-transition romantic-hover group">
+          <div ref={eventInfoRef} className="p-8 smooth-transition group">
             <div className="text-center mb-6">
               <h3 className="font-elegant text-3xl md:text-4xl font-bold text-khaki-900 mb-2">
                 Ceremony & Reception
@@ -117,7 +120,7 @@ function EventDetails() {
                 {events.map((event, index) => (
                   <div
                     key={index}
-                    className="pt-4 border-t border-khaki-300 first:border-t-0 first:pt-0 group/event smooth-transition"
+                    className="pt-4 border-t border-khaki-300 first:border-t-0 first:pt-0  smooth-transition"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-center justify-between mb-2">
