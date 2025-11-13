@@ -22,11 +22,35 @@ function Hero() {
         </div>
       )}
 
-      {/* Decorative background elements - hidden on mobile, visible on desktop */}
-      <div className="absolute inset-0 overflow-hidden hidden md:block">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blush-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animate-float"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-gold-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000 animate-float-reverse"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-khaki-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000 animate-float"></div>
+      {/* Repeating pattern overlay */}
+      <div
+        className="absolute inset-0 z-[5] pointer-events-none opacity-[0.02]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      ></div>
+
+      {/* Decorative background blob elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large subtle blobs - Desktop */}
+        <div className="hidden md:block">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animate-float"></div>
+          <div className="absolute top-40 right-10 w-80 h-80 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000 animate-float-reverse"></div>
+          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000 animate-float"></div>
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-6000 animate-float-reverse"></div>
+          <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-3000 animate-float"></div>
+        </div>
+
+        {/* Smaller subtle blobs - Mobile */}
+        <div className="md:hidden">
+          <div className="absolute top-32 right-8 w-48 h-48 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-40 left-8 w-56 h-56 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-6000"></div>
+        </div>
+
+        {/* Additional floating accent blobs */}
+        <div className="absolute top-10 right-1/3 w-32 h-32 bg-gold-300/30 rounded-full filter blur-2xl opacity-25 animate-blob animation-delay-5000 hidden lg:block"></div>
+        <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-blush-300/30 rounded-full filter blur-2xl opacity-25 animate-blob animation-delay-7000 hidden lg:block"></div>
       </div>
 
       {/* Main Content Container */}
@@ -140,26 +164,38 @@ function Hero() {
       <style>{`
         @keyframes blob {
           0% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
           }
           33% {
-            transform: translate(30px, -50px) scale(1.1);
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
           }
           66% {
-            transform: translate(-20px, 20px) scale(0.9);
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
           }
           100% {
-            transform: translate(0px, 0px) scale(1);
+            transform: translate(0px, 0px) scale(1) rotate(360deg);
           }
         }
         .animate-blob {
-          animation: blob 7s infinite;
+          animation: blob 8s ease-in-out infinite;
         }
         .animation-delay-2000 {
           animation-delay: 2s;
         }
+        .animation-delay-3000 {
+          animation-delay: 3s;
+        }
         .animation-delay-4000 {
           animation-delay: 4s;
+        }
+        .animation-delay-5000 {
+          animation-delay: 5s;
+        }
+        .animation-delay-6000 {
+          animation-delay: 6s;
+        }
+        .animation-delay-7000 {
+          animation-delay: 7s;
         }
       `}</style>
     </section>

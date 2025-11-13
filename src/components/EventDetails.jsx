@@ -67,8 +67,15 @@ function EventDetails() {
   ]
 
   return (
-    <section className="section-padding khaki-bg relative z-10">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding khaki-bg relative z-10 overflow-hidden">
+      {/* Decorative background blob elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 -left-32 md:-left-40 w-72 h-72 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 -left-24 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000 hidden lg:block"></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16" ref={headerRef}>
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
@@ -173,7 +180,7 @@ function EventDetails() {
                 style={{
                   border: 0,
                   minHeight: '400px',
-                  filter: 'sepia(15%) saturate(85%) brightness(92%) contrast(88%) hue-rotate(-5deg)'
+                  filter: 'sepia(15%) saturate(85%) brightness(92%) contrast(88%) hue-rotate(-10deg)'
                 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -197,21 +204,6 @@ function EventDetails() {
               ></div>
             </div>
 
-            {/* Enhanced location pin indicator overlay */}
-            <div className="absolute top-4 right-4 bg-gradient-to-br from-khaki-600 to-khaki-700/95 backdrop-blur-md text-white px-5 py-3 rounded-xl shadow-2xl z-20 border border-khaki-500/30 hover:shadow-3xl smooth-transition hover:scale-110 hover:rotate-2 group/pin animate-float">
-              <div className="flex items-center gap-2.5">
-                <div className="relative">
-                  <svg className="w-5 h-5 drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.85a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  <div className="absolute inset-0 bg-white/20 rounded-full blur-sm"></div>
-                </div>
-                <span className="font-elegant font-semibold text-sm tracking-wide drop-shadow-md">{location.name}</span>
-                {/* Sparkle on hover */}
-                <span className="absolute -top-1 -right-1 text-xs opacity-0 group-hover/pin:opacity-70 animate-sparkle smooth-transition">✨</span>
-              </div>
-              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-khaki-600 rotate-45 border-r border-b border-khaki-500/50"></div>
-            </div>
 
             {/* Address badge at bottom */}
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-khaki-800 px-4 py-2.5 rounded-lg shadow-lg z-20 border border-khaki-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -220,6 +212,35 @@ function EventDetails() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1) rotate(360deg);
+          }
+        }
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animation-delay-6000 {
+          animation-delay: 6s;
+        }
+      `}</style>
     </section>
   )
 }

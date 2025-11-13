@@ -126,8 +126,15 @@ function DressCode() {
   ]
 
   return (
-    <section className="section-padding khaki-bg relative z-10">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding khaki-bg relative z-10 overflow-hidden">
+      {/* Decorative background blob elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-16 right-1/4 w-72 h-72 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-24 left-1/4 w-80 h-80 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000 hidden lg:block"></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-12" ref={headerRef}>
           <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-800 mb-4">
             Finer Details
@@ -218,6 +225,35 @@ function DressCode() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1) rotate(360deg);
+          }
+        }
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animation-delay-6000 {
+          animation-delay: 6s;
+        }
+      `}</style>
     </section>
   )
 }

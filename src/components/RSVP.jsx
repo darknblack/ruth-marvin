@@ -48,7 +48,7 @@ function RSVP({ code: propCode }) {
           entry.target.classList.add('visible')
           entry.target.style.opacity = '1'
           entry.target.style.transform = 'translateY(0)'
-          
+
           // Special focus animation for RSVP form when it comes into view
           if (entry.target === formRef.current) {
             // Small delay before focusing to let animation complete
@@ -144,7 +144,7 @@ function RSVP({ code: propCode }) {
   }
 
   return (
-    <section className="section-padding relative overflow-hidden z-10 bg-gradient-to-br from-khaki-50 via-blush-50 to-gold-50">
+    <section className="section-padding relative overflow-hidden z-10 bg-gradient-to-br from-khaki-100 via-blush-50 to-khaki-100">
       {/* Background with subtle gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-khaki-50 via-blush-50 to-gold-50">
         <div className="absolute top-20 right-10 w-96 h-96 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -153,9 +153,7 @@ function RSVP({ code: propCode }) {
 
       <div className="relative z-10 max-w-2xl mx-auto">
         <div className="text-center mb-12" ref={headerRef}>
-          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-900 mb-4">
-            RSVP
-          </h2>
+
           <p className="text-khaki-700 font-script text-2xl">
             Please let us know if you can join us
           </p>

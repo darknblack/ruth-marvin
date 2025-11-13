@@ -217,3 +217,61 @@
   box-shadow: 0 10px 30px rgba(232, 191, 90, 0.2);
 }
 
+/* Enhanced visual effects */
+@keyframes shimmer-glow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    rgba(232, 191, 90, 0.1) 0%,
+    rgba(232, 191, 90, 0.3) 50%,
+    rgba(232, 191, 90, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-glow 3s ease-in-out infinite;
+}
+
+/* Subtle texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.02) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Enhanced gradient backgrounds */
+.gradient-mesh {
+  background: 
+    radial-gradient(at 0% 0%, rgba(232, 191, 90, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(232, 150, 150, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(212, 203, 184, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(232, 191, 90, 0.1) 0px, transparent 50%);
+}
+
+/* Smooth scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+

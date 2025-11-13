@@ -81,6 +81,14 @@ function OurStory() {
 
   return (
     <section className="khaki-light relative overflow-hidden z-10 pt-4">
+      {/* Decorative background blob elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-80 h-80 bg-blush-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-32 left-10 w-96 h-96 bg-gold-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-khaki-200 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-6000"></div>
+        <div className="absolute top-10 right-1/4 w-56 h-56 bg-blush-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-3000 hidden lg:block"></div>
+      </div>
+
       {/* Elegant Header Section */}
       <div className="section-padding pt-16 pb-8">
         <div className="max-w-4xl mx-auto text-center" ref={headerRef}>
@@ -178,6 +186,38 @@ function OurStory() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1) rotate(360deg);
+          }
+        }
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-3000 {
+          animation-delay: 3s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animation-delay-6000 {
+          animation-delay: 6s;
+        }
+      `}</style>
     </section>
   )
 }
