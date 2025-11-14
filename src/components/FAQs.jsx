@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 function FAQs() {
-  const [openIndices, setOpenIndices] = useState([])
+  const [openIndices, setOpenIndices] = useState([0])
   const headerRef = useRef(null)
   const faqItemsRef = useRef([])
   const contentRefs = useRef([])
@@ -57,15 +57,16 @@ function FAQs() {
   // FAQ data - easily add more questions here
   const faqs = [
     {
-      question: "Can I Bring My Kids?",
-      answer: "We love your little ones, but we kindly request that our wedding be an adults-only celebration. We appreciate your understanding and look forward to celebrating with you!",
-      highlight: "AN ADULTS-ONLY CELEBRATION"
-    },
-    {
       question: "Can I Bring Someone?",
       answer: "In order to keep our event solemn and intimate, we are only able to accommodate guests named on this invite. We appreciate your kind understanding.",
       highlight: "ONLY ABLE TO ACCOMMODATE GUESTS NAMED ON THIS INVITE"
+    },
+    {
+      question: "Can I Bring My Kids?",
+      answer: "We love your little ones, but we kindly request that our wedding be an adults-only celebration. We appreciate your understanding and look forward to celebrating with you!",
+      highlight: "AN ADULTS-ONLY CELEBRATION"
     }
+
     // Add more FAQ objects here as needed - just add new objects to this array
   ]
 
@@ -81,7 +82,7 @@ function FAQs() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-16" ref={headerRef}>
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-800 mb-4">
+          <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-700 mb-4">
             Frequently Asked Questions
           </h2>
         </div>
@@ -101,12 +102,12 @@ function FAQs() {
                   className="w-full text-left flex items-center justify-between py-6 px-2 focus:outline-none focus:ring-2 focus:ring-khaki-300 rounded-lg transition-all duration-300 hover:bg-khaki-50/50"
                   aria-expanded={isOpen}
                 >
-                  <h3 className="font-script text-2xl md:text-3xl font-bold text-khaki-900 pr-8">
+                  <h3 className="font-script text-2xl md:text-3xl font-bold text-khaki-700 pr-8">
                     {faq.question}
                   </h3>
                   <div className={`faq-icon flex-shrink-0 transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180' : ''}`}>
                     <svg
-                      className="w-6 h-6 text-khaki-700"
+                      className="w-6 h-6 text-khaki-600"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -132,7 +133,7 @@ function FAQs() {
                     }}
                     className="px-2 pb-6"
                   >
-                    <p className="text-khaki-800 leading-relaxed text-lg">
+                    <p className="text-khaki-600 leading-relaxed text-sm sm:text-md sm:text-lg">
                       {faq.answer.split(faq.highlight).map((part, i, arr) => (
                         <React.Fragment key={i}>
                           {part}

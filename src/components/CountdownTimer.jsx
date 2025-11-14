@@ -82,7 +82,7 @@ function CountdownTimer({ targetDate }) {
         <div className="absolute bottom-32 left-1/3 w-64 h-64 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-3000 hidden lg:block"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto min-h-[80vh] py-8 flex flex-col justify-center">
+      <div className="relative z-10 max-w-6xl mx-auto py-8 flex flex-col justify-center">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           {/* Decorative elements */}
@@ -92,17 +92,17 @@ function CountdownTimer({ targetDate }) {
             <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent"></div>
           </div>
 
-          <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl font-bold text-khaki-900 mb-4">
+          <h2 className="font-elegant text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-khaki-700 mb-4">
             Countdown to Our Big Day
           </h2>
 
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent via-gold-400 to-gold-500"></div>
+            <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent via-gold-400 to-gold-100"></div>
             <span className="text-xl md:text-2xl text-gold-500">✨</span>
             <div className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent via-gold-400 to-gold-500"></div>
           </div>
 
-          <p className="font-script text-xl md:text-2xl lg:text-3xl text-khaki-700 max-w-2xl mx-auto">
+          <p className="font-script text-xl md:text-2xl lg:text-3xl text-khaki-500 max-w-2xl mx-auto">
             We can't wait to celebrate with you!
           </p>
         </div>
@@ -124,10 +124,12 @@ function CountdownTimer({ targetDate }) {
           <TimeUnit value={timeLeft.seconds} label="Seconds" unitKey="seconds" />
         </div>
 
+
         {/* Decorative bottom element */}
         <div className="mt-12 md:mt-16 flex items-center justify-center">
           <div className="h-px w-32 md:w-48 bg-gradient-to-r from-transparent via-khaki-300 to-transparent"></div>
         </div>
+
       </div>
 
       <style>{`

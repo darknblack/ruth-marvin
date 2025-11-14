@@ -49,7 +49,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px) rotate(5deg);
+    transform: translateY(-0.5rem) rotate(5deg);
   }
 }
 
@@ -58,7 +58,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px) rotate(-5deg);
+    transform: translateY(-0.5rem) rotate(-5deg);
   }
 }
 

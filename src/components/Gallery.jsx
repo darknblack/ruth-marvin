@@ -62,10 +62,10 @@ function Gallery() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16" ref={headerRef}>
-          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-900 mb-4">
+          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-700 mb-4">
             Our Memories
           </h2>
-          <p className="text-lg text-khaki-700 font-script text-2xl">
+          <p className="text-lg text-khaki-500 font-script text-2xl">
             Moments we've shared together
           </p>
         </div>

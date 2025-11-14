@@ -46,7 +46,7 @@ function PersonalMessage() {
     }
   }, [])
   return (
-    <section className="section-padding relative z-10 min-h-[20vh] flex items-center justify-center overflow-hidden w-full">
+    <section className="section-padding khaki-bg relative z-10 min-h-[20vh] flex items-center justify-center overflow-hidden w-full">
       {/* Decorative background blob elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-2 left-2 w-80 h-80 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>

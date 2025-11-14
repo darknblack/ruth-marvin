@@ -108,7 +108,7 @@ function OurStory() {
           </div>
 
           {/* Main Title */}
-          <h2 className="font-elegant text-5xl md:text-6xl lg:text-7xl font-bold text-khaki-900 mb-6 animate-fade-in-up">
+          <h2 className="font-elegant text-5xl md:text-6xl lg:text-7xl font-bold text-khaki-700 mb-6 animate-fade-in-up">
             Our Story
           </h2>
 
@@ -121,7 +121,7 @@ function OurStory() {
           </div>
 
           {/* Subtitle */}
-          <p className="font-script text-xl md:text-2xl lg:text-3xl text-khaki-700 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="font-script text-xl md:text-2xl lg:text-3xl text-khaki-500 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             A journey of love, laughter, and endless memories
           </p>
         </div>

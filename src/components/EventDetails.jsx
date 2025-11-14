@@ -72,145 +72,223 @@ function EventDetails() {
     <section className="section-padding relative overflow-hidden bg-gradient-to-br from-khaki-100 via-khaki-50 to-khaki-100 z-10">
 
       {/* Decorative background blob elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-non hidden sm:block">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
         <div className="absolute top-20 -left-32 md:-left-40 w-72 h-72 bg-gold-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-20 -right-32 md:-right-40 w-80 h-80 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
         <div className="absolute top-1/2 -left-24 w-64 h-64 bg-khaki-50 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000 hidden lg:block"></div>
       </div>
 
+      {/* Floating map and place-themed SVG elements - 2D map style */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[6]">
+        {/* Map Grid Pattern - Top Left */}
+        <svg className="absolute top-16 left-8 w-32 h-32 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="1" style={{ animationDelay: '0s' }}>
+          <line x1="10" y1="10" x2="10" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="30" y1="10" x2="30" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="50" y1="10" x2="50" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="70" y1="10" x2="70" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="90" y1="10" x2="90" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="10" y1="10" x2="90" y2="10" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="10" y1="30" x2="90" y2="30" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="10" y1="50" x2="90" y2="50" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="10" y1="70" x2="90" y2="70" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <line x1="10" y1="90" x2="90" y2="90" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.08)" />
+        </svg>
+
+        {/* Compass Rose - Top Right */}
+        <svg className="absolute top-24 right-12 w-24 h-24 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="1.5" style={{ animationDelay: '1s' }}>
+          <circle cx="50" cy="50" r="35" stroke="rgba(232, 191, 90, 0.1)" fill="none" />
+          <line x1="50" y1="15" x2="50" y2="50" stroke="rgba(232, 191, 90, 0.12)" strokeWidth="2" />
+          <line x1="50" y1="50" x2="50" y2="85" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" />
+          <line x1="15" y1="50" x2="50" y2="50" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" />
+          <line x1="50" y1="50" x2="85" y2="50" stroke="rgba(232, 191, 90, 0.12)" strokeWidth="2" />
+          <path d="M50 20 L45 35 L55 35 Z" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" fill="none" />
+          <path d="M50 80 L45 65 L55 65 Z" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" fill="none" />
+          <path d="M20 50 L35 45 L35 55 Z" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" fill="none" />
+          <path d="M80 50 L65 45 L65 55 Z" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" fill="none" />
+          <circle cx="50" cy="50" r="4" stroke="rgba(232, 191, 90, 0.1)" fill="none" />
+        </svg>
+
+        {/* Building Outline - Middle Left */}
+        <svg className="absolute top-1/2 left-6 transform -translate-y-1/2 w-20 h-20 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '2s' }}>
+          <rect x="20" y="30" width="25" height="50" stroke="rgba(212, 203, 184, 0.08)" fill="none" />
+          <rect x="55" y="20" width="25" height="60" stroke="rgba(212, 203, 184, 0.08)" fill="none" />
+          <line x1="32.5" y1="30" x2="32.5" y2="50" stroke="rgba(212, 203, 184, 0.08)" strokeWidth="1" />
+          <line x1="45" y1="30" x2="45" y2="50" stroke="rgba(212, 203, 184, 0.08)" strokeWidth="1" />
+          <line x1="67.5" y1="20" x2="67.5" y2="40" stroke="rgba(212, 203, 184, 0.08)" strokeWidth="1" />
+          <line x1="80" y1="20" x2="80" y2="40" stroke="rgba(212, 203, 184, 0.08)" strokeWidth="1" />
+        </svg>
+
+        {/* Trail/Path - Bottom Left */}
+        <svg className="absolute bottom-20 left-16 w-32 h-32 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '1.5s' }}>
+          <path d="M10 50 Q30 30, 50 40 Q70 50, 90 30" strokeLinecap="round" strokeDasharray="3,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <circle cx="10" cy="50" r="2" stroke="rgba(212, 203, 184, 0.08)" fill="none" strokeWidth="1.5" />
+          <circle cx="50" cy="40" r="2" stroke="rgba(212, 203, 184, 0.08)" fill="none" strokeWidth="1.5" />
+          <circle cx="90" cy="30" r="2" stroke="rgba(212, 203, 184, 0.08)" fill="none" strokeWidth="1.5" />
+        </svg>
+
+        {/* Map Route Lines - Middle Right */}
+        <svg className="absolute top-1/3 right-8 w-24 h-24 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '0.5s' }}>
+          <path d="M20 30 L40 50 L60 40 L80 60" strokeDasharray="4,4" strokeLinecap="round" stroke="rgba(232, 191, 90, 0.08)" />
+          <circle cx="20" cy="30" r="2" stroke="rgba(232, 191, 90, 0.08)" fill="none" strokeWidth="1.5" />
+          <circle cx="80" cy="60" r="2" stroke="rgba(232, 191, 90, 0.08)" fill="none" strokeWidth="1.5" />
+        </svg>
+
+        {/* Map Route Lines - Top Center */}
+        <svg className="absolute top-32 left-1/4 w-28 h-28 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '2.5s' }}>
+          <path d="M20 20 L40 30 L60 25 L80 35" strokeDasharray="4,4" strokeLinecap="round" stroke="rgba(212, 203, 184, 0.08)" />
+          <circle cx="20" cy="20" r="2" stroke="rgba(212, 203, 184, 0.08)" fill="none" strokeWidth="1.5" />
+          <circle cx="80" cy="35" r="2" stroke="rgba(212, 203, 184, 0.08)" fill="none" strokeWidth="1.5" />
+        </svg>
+
+        {/* Compass - Bottom Right */}
+        <svg className="absolute bottom-24 right-16 w-20 h-20 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="1.5" style={{ animationDelay: '1.8s' }}>
+          <circle cx="50" cy="50" r="30" stroke="rgba(232, 191, 90, 0.1)" fill="none" />
+          <line x1="50" y1="20" x2="50" y2="50" stroke="rgba(232, 191, 90, 0.12)" strokeWidth="2" />
+          <line x1="50" y1="50" x2="50" y2="80" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" />
+          <line x1="20" y1="50" x2="50" y2="50" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" />
+          <line x1="50" y1="50" x2="80" y2="50" stroke="rgba(232, 191, 90, 0.12)" strokeWidth="2" />
+          <path d="M50 25 L45 40 L55 40 Z" stroke="rgba(232, 191, 90, 0.1)" strokeWidth="1" fill="none" />
+          <circle cx="50" cy="50" r="3" stroke="rgba(232, 191, 90, 0.1)" fill="none" />
+        </svg>
+
+        {/* Trail Path - Middle Center */}
+        <svg className="absolute top-2/3 left-1/3 w-26 h-26 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '3s' }}>
+          <path d="M15 60 Q35 45, 55 55 Q75 65, 85 50" strokeLinecap="round" strokeDasharray="3,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <circle cx="15" cy="60" r="2" stroke="rgba(212, 203, 184, 0.06)" fill="none" strokeWidth="1.5" />
+          <circle cx="55" cy="55" r="2" stroke="rgba(212, 203, 184, 0.06)" fill="none" strokeWidth="1.5" />
+          <circle cx="85" cy="50" r="2" stroke="rgba(212, 203, 184, 0.06)" fill="none" strokeWidth="1.5" />
+        </svg>
+
+        {/* Map Grid Pattern - Top Right Area */}
+        <svg className="absolute top-40 right-1/4 w-20 h-20 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="1" style={{ animationDelay: '0.8s' }}>
+          <line x1="15" y1="15" x2="15" y2="85" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="50" y1="15" x2="50" y2="85" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="85" y1="15" x2="85" y2="85" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="15" y1="15" x2="85" y2="15" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="15" y1="50" x2="85" y2="50" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="15" y1="85" x2="85" y2="85" strokeDasharray="2,3" stroke="rgba(212, 203, 184, 0.06)" />
+        </svg>
+
+        {/* Route Arrow - Bottom Left */}
+        <svg className="absolute bottom-40 left-1/4 w-18 h-18 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '2.2s' }}>
+          <path d="M20 50 L60 50" strokeLinecap="round" strokeDasharray="3,3" stroke="rgba(232, 191, 90, 0.08)" />
+          <path d="M50 30 L60 50 L50 70" stroke="rgba(232, 191, 90, 0.08)" strokeWidth="2" fill="none" />
+        </svg>
+
+        {/* Route Arrow - Top Left */}
+        <svg className="absolute top-1/4 left-12 w-24 h-24 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="2" style={{ animationDelay: '1.2s' }}>
+          <path d="M20 50 L60 50" strokeLinecap="round" strokeDasharray="3,3" stroke="rgba(212, 203, 184, 0.08)" />
+          <path d="M50 30 L60 50 L50 70" stroke="rgba(212, 203, 184, 0.08)" strokeWidth="2" fill="none" />
+        </svg>
+
+        {/* Map Grid Lines - Bottom Center */}
+        <svg className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-28 h-28 animate-float-reverse" viewBox="0 0 100 100" fill="none" strokeWidth="1" style={{ animationDelay: '2.8s' }}>
+          <line x1="20" y1="20" x2="20" y2="80" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="50" y1="20" x2="50" y2="80" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="80" y1="20" x2="80" y2="80" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="20" y1="20" x2="80" y2="20" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="20" y1="50" x2="80" y2="50" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+          <line x1="20" y1="80" x2="80" y2="80" strokeDasharray="2,2" stroke="rgba(212, 203, 184, 0.06)" />
+        </svg>
+
+        {/* Building Outline - Top Center */}
+        <svg className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-22 h-22 animate-float" viewBox="0 0 100 100" fill="none" strokeWidth="1.5" style={{ animationDelay: '1.5s' }}>
+          <rect x="25" y="40" width="20" height="40" stroke="rgba(212, 203, 184, 0.06)" fill="none" />
+          <rect x="55" y="30" width="20" height="50" stroke="rgba(212, 203, 184, 0.06)" fill="none" />
+          <line x1="30" y1="40" x2="30" y2="55" stroke="rgba(212, 203, 184, 0.06)" strokeWidth="1" />
+          <line x1="40" y1="40" x2="40" y2="55" stroke="rgba(212, 203, 184, 0.06)" strokeWidth="1" />
+        </svg>
+      </div>
+
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="text-center mb-16" ref={headerRef}>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
-            <span className="text-2xl md:text-3xl animate-float animate-heartbeat">💒</span>
-            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
-          </div>
-          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-900 mb-4">
+        <div className="text-center mb-12 md:mb-16 px-4" ref={headerRef}>
+          <h2 className="font-elegant text-3xl sm:text-4xl md:text-5xl font-bold text-khaki-700 mb-3 md:mb-4">
             Event Details
           </h2>
-          <p className="text-khaki-700 font-script text-2xl">
-            We'd love to celebrate with you
-          </p>
+          <h3 className="font-script text-2xl sm:text-3xl md:text-4xl font-semibold text-khaki-500 mb-6 md:mb-8">
+            Join Us for Our Special Day
+          </h3>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-khaki-400 to-khaki-400"></div>
+            <span className="text-2xl">✨</span>
+            <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent via-khaki-400 to-khaki-400"></div>
+          </div>
         </div>
 
-        {/* Event details and map side by side */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Event Information */}
-          <div ref={eventInfoRef} className="p-8 smooth-transition group">
-            <div className="text-center mb-6">
-              <h3 className="font-elegant text-3xl md:text-4xl font-bold text-khaki-900 mb-2">
-                Ceremony & Reception
-              </h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-khaki-400 to-transparent mx-auto mb-4"></div>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 px-4">
+          {/* Left Column - Event Information */}
+          <div ref={eventInfoRef} className="space-y-6">
+            {/* Date Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-khaki-200/60 text-center">
+              <div className="mb-6">
+                <svg className="w-12 h-12 text-gold-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p className="font-elegant text-3xl md:text-4xl text-khaki-900 mb-2">December 20, 2025</p>
+                <p className="font-script text-xl text-khaki-600">Saturday</p>
+              </div>
             </div>
 
+            {/* Events */}
             <div className="space-y-6">
-              {/* Date */}
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <svg className="w-5 h-5 text-khaki-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-lg font-semibold text-khaki-900">December 20, 2025</p>
-                </div>
-              </div>
-
-              {/* Ceremony and Reception Times */}
-              <div className="space-y-4">
-                {events.map((event, index) => (
-                  <div
-                    key={index}
-                    className="pt-4 border-t border-khaki-300 first:border-t-0 first:pt-0  smooth-transition"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-elegant text-xl font-semibold text-khaki-900 group-hover/event:text-gradient smooth-transition">{event.title}</h4>
-                      <p className="text-xl font-bold text-gradient">{event.time}</p>
+              {events.map((event, index) => (
+                <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-khaki-200/60">
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div className="flex-1">
+                      <h4 className="font-elegant text-xl md:text-2xl text-khaki-900 mb-2">{event.title}</h4>
+                      <p className="text-sm text-khaki-700 italic">{event.description}</p>
                     </div>
-                    <p className="text-sm text-khaki-700 italic">{event.description}</p>
-                    {/* Floating sparkle on hover */}
-                    <span className="inline-block opacity-0 group-hover/event:opacity-60 animate-sparkle smooth-transition ml-2">✨</span>
+                    <div className="text-right">
+                      <p className="text-2xl md:text-3xl font-bold text-gold-600">{event.time}</p>
+                    </div>
                   </div>
-                ))}
-              </div>
-
-              {/* Location */}
-              <div className="pt-4 border-t border-khaki-300">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <svg className="w-5 h-5 text-khaki-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="font-semibold text-khaki-900">{location.name}</p>
                 </div>
-                <p className="text-sm text-khaki-700 text-center">{location.address}</p>
+              ))}
+            </div>
+
+            {/* Location Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-khaki-200/60">
+              <div className="flex items-start gap-4 mb-4">
+                <svg className="w-6 h-6 text-khaki-700 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div className="flex-1">
+                  <h4 className="font-elegant text-xl md:text-2xl text-khaki-900 mb-2">{location.name}</h4>
+                  <p className="text-sm text-khaki-700 mb-3">{location.address}</p>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(location.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gold-600 hover:text-gold-700 underline smooth-transition"
+                  >
+                    Get Directions →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Map */}
-          <div ref={mapRef} className="relative bg-gradient-to-br from-khaki-100 to-khaki-50 rounded-xl shadow-2xl overflow-hidden border-2 border-khaki-300/80 group hover:shadow-3xl smooth-transition">
-            {/* Decorative corner accents with enhanced styling */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-[3px] border-l-[3px] border-khaki-500/60 rounded-tl-xl z-10 pointer-events-none shadow-lg"></div>
-            <div className="absolute top-0 right-0 w-20 h-20 border-t-[3px] border-r-[3px] border-khaki-500/60 rounded-tr-xl z-10 pointer-events-none shadow-lg"></div>
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[3px] border-l-[3px] border-khaki-500/60 rounded-bl-xl z-10 pointer-events-none shadow-lg"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-[3px] border-r-[3px] border-khaki-500/60 rounded-br-xl z-10 pointer-events-none shadow-lg"></div>
-
-            {/* Ornamental corner details */}
-            <div className="absolute top-2 left-2 w-3 h-3 bg-khaki-400/40 rounded-full z-10 pointer-events-none"></div>
-            <div className="absolute top-2 right-2 w-3 h-3 bg-khaki-400/40 rounded-full z-10 pointer-events-none"></div>
-            <div className="absolute bottom-2 left-2 w-3 h-3 bg-khaki-400/40 rounded-full z-10 pointer-events-none"></div>
-            <div className="absolute bottom-2 right-2 w-3 h-3 bg-khaki-400/40 rounded-full z-10 pointer-events-none"></div>
-
-            {/* Map container with enhanced warm overlays */}
-            <div className="relative h-full min-h-[400px] md:min-h-full">
-              {/* Multi-layer warm overlays for depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-khaki-50/40 via-transparent to-khaki-200/25 z-10 pointer-events-none mix-blend-soft-light"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-khaki-100/20 via-transparent to-transparent z-10 pointer-events-none"></div>
-
-              {/* Subtle texture overlay */}
-              <div
-                className="absolute inset-0 z-10 pointer-events-none opacity-[0.03]"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}
-              ></div>
-
-              <iframe
-                src={location.mapUrl}
-                width="100%"
-                height="100%"
-                style={{
-                  border: 0,
-                  minHeight: '400px',
-                  filter: 'sepia(15%) saturate(85%) brightness(92%) contrast(88%) hue-rotate(-10deg)'
-                }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full relative z-0 transition-transform duration-500 group-hover:scale-[1.01]"
-                title="Wedding Location Map"
-              ></iframe>
-
-              {/* Enhanced vignette with multiple layers */}
-              <div
-                className="absolute inset-0 pointer-events-none z-10"
-                style={{
-                  background: 'radial-gradient(circle at center, transparent 0%, transparent 50%, rgba(63, 55, 46, 0.08) 100%)'
-                }}
-              ></div>
-              <div
-                className="absolute inset-0 pointer-events-none z-10"
-                style={{
-                  background: 'linear-gradient(to bottom, rgba(250, 249, 246, 0.1) 0%, transparent 20%, transparent 80%, rgba(63, 55, 46, 0.05) 100%)'
-                }}
-              ></div>
-            </div>
-
-
-            {/* Address badge at bottom */}
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-khaki-800 px-4 py-2.5 rounded-lg shadow-lg z-20 border border-khaki-200/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-xs font-medium text-center text-khaki-700">{location.address}</p>
+          {/* Right Column - Map */}
+          <div ref={mapRef} className="relative">
+            <div className="sticky top-8">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-khaki-200/60 overflow-hidden h-full min-h-[500px]">
+                <iframe
+                  src={location.mapUrl}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    border: 0,
+                    minHeight: '500px',
+                    filter: 'sepia(15%) saturate(85%) brightness(92%) contrast(88%) hue-rotate(-10deg)'
+                  }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                  title="Wedding Location Map"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

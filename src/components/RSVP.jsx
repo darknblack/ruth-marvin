@@ -166,10 +166,10 @@ function RSVP({ code: propCode }) {
             <span className="text-2xl md:text-3xl text-blush-400 animate-float">💌</span>
             <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
           </div>
-          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-900 mb-4">
+          <h2 className="font-elegant text-4xl md:text-5xl font-bold text-khaki-700 mb-4">
             RSVP
           </h2>
-          <p className="text-khaki-700 font-script text-2xl">
+          <p className="text-khaki-500 font-script text-2xl">
             Please let us know if you can join us
           </p>
         </div>
@@ -181,7 +181,7 @@ function RSVP({ code: propCode }) {
             <div className="absolute top-0 right-0 w-20 h-20 border-t-[3px] border-r-[3px] border-green-300/60 rounded-tr-2xl z-10 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[3px] border-l-[3px] border-green-300/60 rounded-bl-2xl z-10 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-20 h-20 border-b-[3px] border-r-[3px] border-green-300/60 rounded-br-2xl z-10 pointer-events-none"></div>
-            
+
             {/* Ornamental corner details */}
             <div className="absolute top-3 left-3 w-3 h-3 bg-green-400/40 rounded-full z-10 pointer-events-none"></div>
             <div className="absolute top-3 right-3 w-3 h-3 bg-green-400/40 rounded-full z-10 pointer-events-none"></div>
@@ -209,7 +209,7 @@ function RSVP({ code: propCode }) {
             <div className="absolute top-0 right-0 w-24 h-24 border-t-[3px] border-r-[3px] border-khaki-400/50 rounded-tr-2xl z-10 pointer-events-none group-hover:border-khaki-500/70 smooth-transition"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 border-b-[3px] border-l-[3px] border-khaki-400/50 rounded-bl-2xl z-10 pointer-events-none group-hover:border-khaki-500/70 smooth-transition"></div>
             <div className="absolute bottom-0 right-0 w-24 h-24 border-b-[3px] border-r-[3px] border-khaki-400/50 rounded-br-2xl z-10 pointer-events-none group-hover:border-khaki-500/70 smooth-transition"></div>
-            
+
             {/* Ornamental corner details */}
             <div className="absolute top-3 left-3 w-4 h-4 bg-khaki-400/30 rounded-full z-10 pointer-events-none group-hover:bg-khaki-500/40 smooth-transition"></div>
             <div className="absolute top-3 right-3 w-4 h-4 bg-khaki-400/30 rounded-full z-10 pointer-events-none group-hover:bg-khaki-500/40 smooth-transition"></div>

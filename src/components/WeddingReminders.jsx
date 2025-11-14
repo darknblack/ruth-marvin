@@ -69,12 +69,8 @@ function WeddingReminders() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16" ref={headerRef}>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
-            <span className="text-2xl md:text-3xl text-blush-400 animate-float animate-heartbeat">💝</span>
-            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent via-gold-400 to-transparent animate-gentle-pulse"></div>
-          </div>
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-800 mb-4">
+
+          <h2 className="font-script text-4xl md:text-5xl font-bold text-khaki-700 mb-4">
             Wedding Reminders
           </h2>
         </div>
@@ -96,12 +92,12 @@ function WeddingReminders() {
 
               {/* Content */}
               <div className="space-y-4">
-                <h3 className="font-elegant text-2xl md:text-3xl font-bold text-khaki-900 group-hover:text-gradient smooth-transition flex items-center justify-center gap-3">
+                <h3 className="font-elegant text-2xl md:text-3xl font-bold text-khaki-700 group-hover:text-gradient smooth-transition flex items-center justify-center gap-3">
                   {/* Number badge */}
 
                   <span>{index + 1}. {reminder.title}</span>
                 </h3>
-                <p className="text-khaki-700 leading-relaxed text-sm md:text-base max-w-xs mx-auto">
+                <p className="text-khaki-500 leading-relaxed text-sm md:text-base max-w-xs mx-auto">
                   {reminder.description}
                 </p>
               </div>

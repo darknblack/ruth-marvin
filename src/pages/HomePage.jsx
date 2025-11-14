@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import Hero from '../components/Hero'
 import CountdownTimer from '../components/CountdownTimer'
-import WeddingReminders from '../components/WeddingReminders'
 import WeddingTimeline from '../components/WeddingTimeline'
 import OurStory from '../components/OurStory'
 import EventDetails from '../components/EventDetails'
 import DressCode from '../components/DressCode'
-import FAQs from '../components/FAQs'
-import Gallery from '../components/Gallery'
+import FAQsAndReminders from '../components/FAQsAndReminders'
 import SnapAndShare from '../components/SnapAndShare'
 import PersonalMessage from '../components/PersonalMessage'
 import RSVP from '../components/RSVP'
@@ -42,19 +40,30 @@ function HomePage() {
   }, [searchParams, navigate])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-[100vh]">
       <Hero />
-      <CountdownTimer targetDate={weddingDate} />
+      <section id="countdown">
+        <CountdownTimer targetDate={weddingDate} />
+      </section>
 
-      <OurStory />
-      <EventDetails />
-      <DressCode />
-      <Gallery />
-      <FAQs />
-      <WeddingReminders />
-      <SnapAndShare />
-      <PersonalMessage />
-      <RSVP code={rsvpCode} />
+      <section id="our-story">
+        <OurStory />
+      </section>
+      <section id="event-details">
+        <EventDetails />
+      </section>
+      <section id="dress-code">
+        <DressCode />
+      </section>
+      <section id="faqs">
+        <FAQsAndReminders />
+      </section>
+      <section id="message">
+        <PersonalMessage />
+      </section>
+      <section id="rsvp">
+        <RSVP code={rsvpCode} />
+      </section>
       <Footer />
     </div>
   )
