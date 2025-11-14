@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 function FAQsAndReminders() {
-  const [openIndices, setOpenIndices] = useState([0])
+  const [openIndices, setOpenIndices] = useState([0, 1])
   const faqHeaderRef = useRef(null)
   const remindersHeaderRef = useRef(null)
   const faqItemsRef = useRef([])

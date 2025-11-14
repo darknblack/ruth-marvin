@@ -52,7 +52,6 @@ function DressCode() {
   }, [])
 
   const colorSwatches = [
-    { id: 'Cream', hexColor: '#f2e6d8', name: 'Cream' },
     { id: 'Beige', hexColor: '#e1c8b1', name: 'Beige' },
     { id: 'Tan', hexColor: '#cca079', name: 'Tan' },
     { id: 'Caramel', hexColor: '#c4835b', name: 'Caramel' }
