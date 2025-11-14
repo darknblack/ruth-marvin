@@ -40,12 +40,11 @@ function HomePage() {
   }, [searchParams, navigate])
 
   return (
-    <div className="min-h-screen pt-[100vh]">
+    <div className="min-h-screen pt-[100svh]">
       <Hero />
       <section id="countdown">
         <CountdownTimer targetDate={weddingDate} />
       </section>
-
       <section id="our-story">
         <OurStory />
       </section>

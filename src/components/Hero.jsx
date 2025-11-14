@@ -75,7 +75,7 @@ export default function Hero() {
   }, [backgrounds.length]);
 
   return (
-    <section className="fixed h-screen flex items-center text-red justify-center overflow-hidden bg-khaki-900 top-0 left-0 right-0">
+    <section className="fixed h-[100svh] flex items-center text-red justify-center overflow-hidden bg-khaki-900 top-0 left-0 right-0">
       {/* Blurred Background Fallback Layer */}
       <div
         className="absolute inset-0 bg-no-repeat transition-opacity duration-[3000ms] ease-in-out"
