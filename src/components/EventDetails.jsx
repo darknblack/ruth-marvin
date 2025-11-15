@@ -147,7 +147,7 @@ function EventDetails() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-0 py-0 sm:px-4 sm:py-8">
         {/* Wedding Invitation Card */}
         <div ref={eventInfoRef} className="relative">
           {/* Main Invitation Card */}
@@ -252,19 +252,11 @@ function EventDetails() {
               </div>
             </div>
 
-            {/* Decorative Top Border Pattern */}
-            <div className="absolute top-8 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
-              <div className="w-1 h-1 rounded-full bg-gold-400/40"></div>
-              <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
-            </div>
-
             {/* Card Content */}
             <div className="relative z-10 p-8 md:p-12 lg:p-16">
               {/* Header */}
               <div className="text-center mb-12" ref={headerRef}>
-                <h2 className="font-romantic text-5xl md:text-6xl lg:text-7xl text-khaki-800 mb-4 tracking-wide">
+                <h2 className="font-romantic pt-10 text-3xl sm:pt-0 sm:text-5xl md:text-6xl lg:text-7xl text-khaki-800 mb-4 tracking-wide">
                   Our Wedding Day
                 </h2>
                 <div className="flex items-center justify-center gap-3 my-6">
@@ -283,13 +275,13 @@ function EventDetails() {
                   <div key={index} className="relative">
                     {/* Timeline Line */}
                     {index < events.length - 1 && (
-                      <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-gold-400/40 to-transparent"></div>
+                      <div className="absolute  left-5 top-10 sm:left-8 sm:top-16 bottom-0 w-0.5 bg-gradient-to-b from-gold-400/40 to-transparent"></div>
                     )}
 
-                    <div className="flex items-start gap-6">
+                    <div className="flex items-start gap-3 sm:gap-6">
                       {/* Time Badge */}
-                      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-gold-100 to-gold-200 border-2 border-gold-400/60 flex items-center justify-center shadow-md relative z-10">
-                        <span className="text-2xl">{event.icon}</span>
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-gold-100 to-gold-200 border-2 border-gold-400/60 flex items-center justify-center shadow-md relative z-10">
+                        <span className="text-sm sm:text-2xl">{event.icon}</span>
                       </div>
 
                       {/* Event Details */}
@@ -312,6 +304,7 @@ function EventDetails() {
                   </div>
                 ))}
               </div>
+
 
               {/* Decorative Divider */}
               <div className="flex items-center justify-center gap-3 my-12">
@@ -358,9 +351,18 @@ function EventDetails() {
                 </div>
               </div>
 
+
+              {/* Decorative Top Border Pattern */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
+              <div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
+                <div className="w-1 h-1 rounded-full bg-gold-400/40"></div>
+                <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
+              </div>
+
               {/* Bottom Decorative Border Pattern */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
                 <div className="w-1 h-1 rounded-full bg-gold-400/40"></div>
                 <div className="w-2 h-2 rounded-full bg-gold-500/60"></div>
@@ -505,19 +507,19 @@ function EventDetails() {
         
         @keyframes candle-flicker-subtle {
           0%, 100% {
-            opacity: 1;
+            opacity: .8;
             transform: scale(1) translateY(0);
           }
           25% {
-            opacity: 0.95;
+            opacity: 0.75;
             transform: scale(1.02) translateY(-1px);
           }
           50% {
-            opacity: 0.9;
+            opacity: 0.8;
             transform: scale(0.98) translateY(1px);
           }
           75% {
-            opacity: 0.95;
+            opacity: 0.75;
             transform: scale(1.01) translateY(-0.5px);
           }
         }
