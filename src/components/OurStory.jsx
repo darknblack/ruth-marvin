@@ -178,7 +178,7 @@ function OurStory() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-khaki-700 leading-relaxed text-sm sm:text-base md:text-lg">
+                            <p className="text-khaki-700 text-justify sm:text-right leading-relaxed text-sm sm:text-base md:text-lg">
                               {event.description}
                             </p>
                           </div>
@@ -231,7 +231,7 @@ function OurStory() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-khaki-700 leading-relaxed text-sm sm:text-base md:text-lg">
+                            <p className="text-khaki-700 text-justify sm:text-left leading-relaxed text-sm sm:text-base md:text-lg">
                               {event.description}
                             </p>
                           </div>

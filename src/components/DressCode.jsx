@@ -218,7 +218,7 @@ function DressCode() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-8 md:mb-12 px-4" ref={headerRef}>
           <img src={TopFlower} className='w-80 h-auto mx-auto mb-6' />
           <h2 className="font-elegant text-3xl sm:text-4xl md:text-5xl font-bold text-khaki-700 mb-3 md:mb-4">
