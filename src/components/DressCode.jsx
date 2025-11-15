@@ -106,7 +106,7 @@ function DressCode() {
   }
 
   return (
-    <section className="section-padding khaki-bg relative z-10 overflow-hidden">
+    <section className="section-padding khaki-bg relative overflow-hidden">
       {/* Repeating pattern overlay */}
       <div
         className="absolute inset-0 z-[5] pointer-events-none opacity-[0.02]"

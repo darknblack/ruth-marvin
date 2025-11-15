@@ -95,7 +95,7 @@ export default function Hero() {
           className={`absolute inset-0 bg-no-repeat transition-opacity duration-[3000ms] ease-in-out ${currentBgIndex === index ? 'opacity-100' : 'opacity-0'} ${currentBgIndex === index ? bg.animationClass : ''}`}
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(45,40,35,0.7), rgba(35,30,25,0.7)), url('" + bg.image + "')",
+              "linear-gradient(to bottom, rgba(45,40,35,0.4), rgba(35,30,25,0.4)), url('" + bg.image + "')",
             backgroundPosition: '80% 60%',
             backgroundSize: '120%',
             zIndex: (backgrounds.length - index),
